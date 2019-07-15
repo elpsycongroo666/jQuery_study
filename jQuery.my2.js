@@ -75,6 +75,13 @@
         return this;
     }
 
+    // 封装toggleClass方法
+    Init.prototype.toggleClass = function(className){
+        this.each((i,e)=> {
+            e.classList.toggle(className);
+        })
+        return this;
+    }
 
     //为了让jQuery变成全局的
     window.jQuery = window.$ = jQuery;
@@ -94,3 +101,4 @@ box.css('background','red');
 // console.log(box.css('background'));
 // box.addClass('a');
 // box.remove('a');
+box.toggleClass('a');
