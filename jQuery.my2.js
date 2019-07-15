@@ -19,6 +19,15 @@
         this.length = list.length;
     }
 
+
+    // 封装each方法 遍历数组
+    Init.prototype.each = function(callback){
+        for(let i =0 ; i < this.length; i++){
+            callback(i,this[i]);//不确定遍历里面的逻辑 - 传回调函数回来
+        }
+    }
+
+
     // jq中的css方法 有两个功能 
     // 第一个 css(属性名,值) 设置属性
     // 第二个 css(属性名)获取该属性的值
@@ -56,8 +65,13 @@
 
 
 let box = $('.box');
-
+// 试用each方法
+// box.each((i,e)=>{
+//     console.log(i);
+// })
 // console.log(box);
 // box.css('width','200px');
 // box.css('height','200px');
 // box.css('background','red');
+// 试用css中的获取元素方法
+// console.log(box.css('background'));
