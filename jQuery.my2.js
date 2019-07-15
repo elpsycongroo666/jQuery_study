@@ -67,6 +67,15 @@
         return this;
     }
 
+    // 封装jq中的removeClass方法
+    Init.prototype.removeClass = function(className){
+        this.each(e => {
+            e.classList.remove(className);
+        })
+        return this;
+    }
+
+
     //为了让jQuery变成全局的
     window.jQuery = window.$ = jQuery;
 })()
@@ -83,4 +92,5 @@ box.css('height','200px');
 box.css('background','red');
 // 试用css中的获取元素方法
 // console.log(box.css('background'));
-box.addClass('a');
+// box.addClass('a');
+// box.remove('a');
