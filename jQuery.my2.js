@@ -59,6 +59,14 @@
     }
 
 
+    // 封装jq中的addClass
+    Init.prototype.addClass = function(className){
+        this.each(e=>{
+            e.classList.add(className);
+        })
+        return this;
+    }
+
     //为了让jQuery变成全局的
     window.jQuery = window.$ = jQuery;
 })()
@@ -70,8 +78,9 @@ let box = $('.box');
 //     console.log(i);
 // })
 // console.log(box);
-// box.css('width','200px');
-// box.css('height','200px');
-// box.css('background','red');
+box.css('width','200px');
+box.css('height','200px');
+box.css('background','red');
 // 试用css中的获取元素方法
 // console.log(box.css('background'));
+box.addClass('a');
